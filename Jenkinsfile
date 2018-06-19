@@ -8,8 +8,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "chmod -R 777 /usr/local/bundle/cache/"                
-                sh "ls && bundle install"
+                sh 'chmod -R 777 /usr/local/bundle/cache/'
+                sh 'ls && bundle install'
+                sh 'rake stats'
             }
         }
     }
