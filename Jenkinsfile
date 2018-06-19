@@ -5,7 +5,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'echo Test'
+                sh 'bundle install'
+                sh 'rake stats'
             }
         }
     }
