@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {                
-                sh "ls && bundle install"
+                sh "ls && sudo bundle install"
             }
         }
     }
