@@ -16,8 +16,7 @@ pipeline {
         }*/
         stage('Test') {
             steps {                
-                sh 'ls'
-                //sh 'rake stats'
+                sh 'ls && bundle install'
             }
         }
     }
