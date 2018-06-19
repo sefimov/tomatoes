@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {                
-                rvm 'bundle install'
+                sh "rvm 'bundle install'"
             }
         }
     }
