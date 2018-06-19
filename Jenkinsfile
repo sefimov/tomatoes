@@ -3,7 +3,7 @@ pipeline {
         docker { image 'registry2.swarm.devfactory.com/chute/jenkins_agents/ruby_on_rails:latest' }   
     }
     stages {
-        stage('Checkout GA') {
+        /*stage('Checkout GA') {
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -13,11 +13,11 @@ pipeline {
                     userRemoteConfigs: scm.userRemoteConfigs
                 ])
             }   
-        }
+        }*/
         stage('Test') {
-            steps {
-                sh 'bundle install'
-                sh 'rake stats'
+            steps {                
+                sh 'ls'
+                //sh 'rake stats'
             }
         }
     }
