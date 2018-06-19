@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "whoami"
                 sh "chmod -R 777 /usr/local/bundle/cache/"                
                 sh "ls && bundle install"
             }
