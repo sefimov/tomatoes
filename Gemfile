@@ -57,6 +57,9 @@ gem 'sucker_punch', '~> 2.0'
 gem 'octokit'
 gem 'twitter'
 
+# capistrano
+gem "capistrano"
+
 group :production do
   gem 'rails_12factor'
 end
