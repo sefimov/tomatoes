@@ -7,10 +7,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'bundle install'
-                sh 'export INT_STR=$(/sbin/ip route|cut -f3 -d" ")'
-                sh 'export SERVER_IP=$( echo $INT_STR | cut -f1 -d" ")'
+                sh 'export SERVER_IP=172.18.0.1'
                 sh 'echo $SERVER_IP'
+                sh 'bundle install'
                 sh 'echo "$SERVER_IP generalhost" >> /etc/hosts'
                 sh 'cap production deploy:check'
                 sh 'cap production deploy'
