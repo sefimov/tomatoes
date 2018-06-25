@@ -1,5 +1,5 @@
 pipeline {
-    properties{
+    options{
         promotion {
             conditions {
                 manual('testuser')
