@@ -1,11 +1,11 @@
 pipeline {
-    options{
+    options {
         promotion {
             conditions {
                 manual('testuser')
             }
             actions {
-                shell('echo hello;')
+                shell('echo hello!!;')
             }
         }
     }
