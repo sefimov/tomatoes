@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Test') {
-            node {
+            agent {
                 label "chute-jenkins-ror"
             }
             steps {
