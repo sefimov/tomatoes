@@ -1,5 +1,5 @@
 pipeline {
-    agent note
+    agent none
     stages {
         stage("Build") {
             agent {
