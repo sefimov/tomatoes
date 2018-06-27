@@ -10,5 +10,13 @@ pipeline {
                 sh 'rake stats'
             }
         }
+        stage('Build docker') {
+            agent {
+                label "optiva"
+            }
+            steps {
+                sh 'docker version'
+            }
+        }
     }
 }
