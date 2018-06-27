@@ -9,6 +9,7 @@ pipeline {
             steps {
                 sh 'bundle install'
                 sh 'rake stats'
+                sh 'docker version'
             }
         }
     }
