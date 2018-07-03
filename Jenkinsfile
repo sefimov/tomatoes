@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage("Build") {
+        /*stage("Build") {
             agent {
                 docker {
                     image 'registry2.swarm.devfactory.com/chute/jenkins_agents/ruby_on_rails:latest'
@@ -12,11 +12,11 @@ pipeline {
                 sh 'cap production deploy:check'
                 sh 'cap production deploy'
             }
-        }
+        }*/
         stage('Test') {
             agent any
             steps {
-                sh 'docker version'
+                sh 'echo $(git rev-parse --short HEAD)'
             }
         }
     }
