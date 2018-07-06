@@ -19,7 +19,7 @@ pipeline {
                 sh 'printenv'
                 sh 'echo $PASSWORD'
                 // also available as a Groovy variable
-                echo USERNAME
+                sh 'echo $USERNAME'
             }
         }
     }
