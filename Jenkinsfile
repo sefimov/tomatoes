@@ -17,6 +17,9 @@ pipeline {
             agent any
             steps {
                 sh 'printenv'
+                sh 'echo $PASSWORD'
+                // also available as a Groovy variable
+                echo USERNAME
             }
         }
     }
