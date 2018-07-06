@@ -1,21 +1,22 @@
 pipeline {
     agent none
     stages {
-        stage('Test') {
+        /*stage("Build") {
             agent {
-                label "chute-jenkins-ror"
+                docker {
+                    image 'registry2.swarm.devfactory.com/chute/jenkins_agents/ruby_on_rails:latest'
+                }
             }
             steps {
                 sh 'bundle install'
-                sh 'rake stats'
+                sh 'cap production deploy:check'
+                sh 'cap production deploy'
             }
-        }
-        stage('Build docker') {
-            agent {
-                label "optiva"
-            }
+        }*/
+        stage('Test') {
+            agent any
             steps {
-                sh 'docker version'
+                sh 'printenv'
             }
         }
     }
