@@ -1,5 +1,6 @@
 pipeline {
     agent none
+    
     stages {
         /*stage("Build") {
             agent {
@@ -15,11 +16,14 @@ pipeline {
         }*/
         stage('Test') {
             agent any
+            environment {
+                CHUTE_SERVICE_CI = credentials('chute_service_ci_credentials_id')
+            }
             steps {
-                sh 'printenv'
-                sh 'echo $PASSWORD'
+                sh 'echo $CHUTE_SERVICE_CI'
+                sh 'echo $CHUTE_SERVICE_CI_USR'
                 // also available as a Groovy variable
-                sh 'echo $USERNAME'
+                sh 'echo $CHUTE_SERVICE_CI_PWD'
             }
         }
     }
