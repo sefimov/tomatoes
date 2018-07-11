@@ -1,11 +1,13 @@
 pipeline {
     agent none
-    stage ('n1') {
-        environment {
-            CHUTE_SERVICE_CI = credentials('test_c')
-        }
-        steps {
-            sh "printenv"
+    stages {
+        stage ('n1') {
+            environment {
+                CHUTE_SERVICE_CI = credentials('test_c')
+            }
+            steps {
+                sh "printenv"
+            }
         }
     }
 }
